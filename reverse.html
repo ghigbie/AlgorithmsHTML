@@ -65,9 +65,9 @@
 <body>
 
 	<div class="container-custom">
-		<h1 class="spaced">Reverse a Word</h1>
+		<h1 class="spaced">Reverse a Wordor Phrase </h1>
 
-		<p class="spaced">This single page application is used to reverse any word that is input into the field below. To reverse a word, enter any word in the text box below, and then click the button.</p>
+		<p class="spaced">This single page application is used to reverse any word or phrase that you enter into the text field below. To get started, enter any word or phrase in the text box below, and then click the button.</p>
 
 		<form class="spaced">
 			<input id="origin" type="text" name="reverse" placeholder="Please enter a word">
@@ -98,7 +98,7 @@
 		origin = origin.value.toString();
 		let outputWord = origin.split("").reverse().join("");
 		if(!origin){
-			alert("Please enter a word. Any set of charcters is fine : )");
+			alert("Please enter a word o phrase. Any set of charcters is fine : )");
 		}
 		destination.innerHTML = `<h1> ${outputWord} </h1>`;
 		destination.classList.toggle("fadein");
@@ -119,15 +119,6 @@
 	button2.addEventListener("click", () => {
 		window.location.reload();
 	});
-
-	// document.getElementById("origin").addEventListener("keyup", function(event) {
- //    	event.preventDefault();
- //    	if (event.keyCode == 13) {
- //        	appendToPage(target);
- //    	}
- //    });
-
-
 </script>
 
 </body>

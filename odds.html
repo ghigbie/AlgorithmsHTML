@@ -88,7 +88,9 @@
 
 	let appendNumsToPage = (destination) => {
 		for(let i = 0; i < 100; i++){
-			destination.append(i + " ");
+			if(i % 2 === 1){
+				destination.append(i + " ");
+			}	
 		}
 	}
 
