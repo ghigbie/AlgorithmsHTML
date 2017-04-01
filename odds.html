@@ -12,7 +12,7 @@
 		font-family: Tahoma, Geneva, sans-serif;
 	}
 
-	.spaced {
+	.container-custom, .spaced{
 		margin: 20px;
 	}
 
@@ -26,8 +26,13 @@
 	button:focus {
 		outline: none;
 	}
+
+	button:hover {
+		background: #295edb;
+	}
 		
 	</style>
+
 
 </head>
 <body>
@@ -57,9 +62,24 @@
 		}
 	}
 
+	function fadeOutEffect() {
+    var fadeTarget = document.getElementById("output");
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity < 0.1) {
+            clearInterval(fadeEffect);
+        } else {
+            fadeTarget.style.opacity -= 0.1;
+        }
+    }, 100);
+}
+
 	button1.addEventListener("click", () => {
 		appendNumsToPage(target);
 		button1.style.display="none";
+		fadeOutEffect();
 	});
 
 	button2.addEventListener("click", () => {
