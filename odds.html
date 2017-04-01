@@ -6,7 +6,9 @@
 		<style type="text/css">
 
 	body{
-		background: #8fecfc;
+		background: #6190E8; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to left, #6190E8 , #A7BFE8); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to left, #6190E8 , #A7BFE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		font-family: Tahoma, Geneva, sans-serif;
 	}
 
@@ -49,23 +51,20 @@
 	let button1 = document.getElementById("button1");
 	let button2 = document.getElementById("button2");
 
-	let appendToPage = (destination, item) => {
-		destination.append(item + " ");
-	};
+	let appendNumsToPage = (destination) => {
+		for(let i = 0; i < 100; i++){
+			destination.append(i + " ");
+		}
+	}
 
 	button1.addEventListener("click", () => {
-		for(let i = 0; i < 100; i++){
-			if(i % 2 === 1){
-				appendToPage(target, i);
-			}
-		}
+		appendNumsToPage(target);
+		button1.style.display="none";
 	});
 
 	button2.addEventListener("click", () => {
 		window.location.reload();
 	});
-
-
 
 </script>
 
