@@ -3,27 +3,50 @@
 <head>
 	<title>Reverse a Word!</title>
 	<style type="text/css">
-	div {
+
+	body{
+		background: #6a87b5;
+	}
+
+	.spaced {
 		margin: 20px;
+	}
+
+	button {
+		color: #fff;
+		background: #2976db;
+		border-radius: 5px;
+		font-size: 1.10em;
+	}
+
+	button:focus {
+		outline: none;
 	}
 		
 	</style>
+
+	
 </head>
 <body>
 
-	<p>This single page application is used to reverse any word that is input into the field below. To reverse a word, enter any word in the text box below.</p>
+	<h1 class="spaced">Reverse a Word</h1>
 
-	<form>
+	<p class="spaced">This single page application is used to reverse any word that is input into the field below. To reverse a word, enter any word in the text box below, and then click the button.</p>
+	<div>
+
+
+	<form class="spaced">
 		<input id="origin" type="text" name="reverse" placeholder="Please enter a word">
 	</form>
 
-	<div class="button-holder">
+	<div class="button-holder spaced">
 		<button>Reverse the word</button>
-	<div>
+	</div>
 
-	<div id="output">
+	<div id="output" class="spaced">
 
-	<div>
+	</div>
+
 
 <script type="text/javascript">
 	let target = document.getElementById("output");
@@ -36,7 +59,6 @@
 	let appendToPage = (destination) => {
 		let origin = document.getElementById("origin").value.toString();
 		let outputWord = origin.split("").reverse().join("");
-		console.log(outputWord);
 		if(!origin){
 			alert("Please enter a word. Any set of charcters is fine : )");
 		}
@@ -46,8 +68,6 @@
 	button.addEventListener("click", () => {
 		appendToPage(target);
 	});
-
-
 </script>
 
 </body>
