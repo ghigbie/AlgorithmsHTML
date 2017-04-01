@@ -38,16 +38,26 @@
 		<button>Give Me the Odd Numbers</button>
 	</div>
 
-	<div id="output" class="spaced">
-
+	<div class="spaced">
+		<h3 id="output"></h3>
 	</div>
 
 <script type="text/javascript">
-	for(let i = 0; i < 100; i++){
-		if(i % 2 === 1){
-			console.log(i);
-		}
+	let target = document.getElementById("output");
+	let button = document.getElementsByTagName("button")[0];
+
+	let appendToPage = (destination, item) => {
+		destination.append(item + " ");
 	};
+
+	button.addEventListener("click", () => {
+		for(let i = 0; i < 100; i++){
+			if(i % 2 === 1){
+				appendToPage(target, i);
+			}
+		}
+	});
+
 </script>
 
 </body>
