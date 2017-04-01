@@ -20,8 +20,16 @@
 		<button>Reverse the word</button>
 	<div>
 
+	<div id="output">
+
+	<div>
+
 <script type="text/javascript">
-	
+	let toReverse = document.getElementByTagName(input).value;
+	let reversed = (toReverse) => {
+		toReverse.split("").reverse().join("");
+	}
+
 </script>
 </body>
 </html>
