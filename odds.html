@@ -32,11 +32,12 @@
 
 	<h1 class="spaced">All of the Odd Numbers</h1>
 
-	<p class="spaced">This single page application will display all of the odd numbers between 0 and 100 at the click of a button. To get started click the button below</p>
+	<p class="spaced">This single page application will display all of the odd numbers between 0 and 100 at the click of a button. To get started click the "Give Me the Odd Numbers" button below:</p>
 	<div>
 
 	<div class="button-holder spaced">
-		<button>Give Me the Odd Numbers</button>
+		<button id="button1">Give Me the Odd Numbers</button>
+		<button id="button2">Reset the Page</button>
 	</div>
 
 	<div class="spaced">
@@ -45,19 +46,26 @@
 
 <script type="text/javascript">
 	let target = document.getElementById("output");
-	let button = document.getElementsByTagName("button")[0];
+	let button1 = document.getElementById("button1");
+	let button2 = document.getElementById("button2");
 
 	let appendToPage = (destination, item) => {
 		destination.append(item + " ");
 	};
 
-	button.addEventListener("click", () => {
+	button1.addEventListener("click", () => {
 		for(let i = 0; i < 100; i++){
 			if(i % 2 === 1){
 				appendToPage(target, i);
 			}
 		}
 	});
+
+	button2.addEventListener("click", () => {
+		window.location.reload();
+	});
+
+
 
 </script>
 
