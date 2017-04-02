@@ -88,6 +88,7 @@
 	let button1 = document.getElementsByTagName("button")[0];
 	let button2 = document.getElementsByTagName("button")[1];
 	let origin = document.getElementById("origin");
+	let form = document.getElementsByTagName("form")[0];
 
 	let reverse = (word) => word.split("").reverse().join("");
 	
@@ -101,6 +102,7 @@
 			destination.innerHTML = `<h1> ${outputWord} </h1>`;
 			destination.classList.toggle("fadein");
 			button1.style.display="none";
+			form.style.display="none";
 		}
 	}
 
@@ -133,6 +135,7 @@
 	// var button1 = document.getElementsByTagName("button")[0];
 	// var button2 = document.getElementsByTagName("button")[1];
 	// var origin = document.getElementById("origin");
+	// var form = document.getElementsByTagName("form")[0];
 
 	// function reverse(word){
 	// 	return word.split("").reverse().join("");
@@ -148,6 +151,7 @@
 	// 		destination.innerHTML = `<h1> ${outputWord} </h1>`;
 	// 		destination.classList.toggle("fadein");
 	// 		button1.style.display="none";
+	//		form.style.display="none";
 	// 	}
 	// }
 

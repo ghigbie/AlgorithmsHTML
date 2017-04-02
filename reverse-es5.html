@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse a Word!</title>
+	<style type="text/css">
+
+	body{
+		background: #6190E8; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to left, #6190E8 , #A7BFE8);
+		background: linear-gradient(to left, #6190E8 , #A7BFE8); 
+		font-family: Tahoma, Geneva, sans-serif;
+		color: #282727
+	}
+
+	.container-custom, .spaced{
+		margin: 20px;
+	}
+
+	#origin{
+		min-width: 200px;
+		width: 33%;
+	}
+
+	button {
+		color: #fff;
+		background: #2976db;
+		border-radius: 5px;
+		font-size: 1.10em;
+		margin: 10px 10px 10px 0; 
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+	button:hover {
+		background: #295edb;
+	}
+
+	p {
+  		animation-duration: 3s;
+  		animation-name: fadein;
+	}
+	@keyframes fadein{
+	  from {
+	  	opacity: 0;
+	  }
+	  to {
+	    opacity: 1;
+	  }
+	}
+
+	.fadein{
+		color: #1339c4;
+		transition: 2s;
+    	left: 0;
+    	margin: 5% 30% 5% 30%;
+	}
+		
+	</style>
+
+	
+</head>
+<body>
+
+	<div class="container-custom">
+		<h1 class="spaced">Reverse a Word or Phrase </h1>
+
+		<p class="spaced">This single page application is used to reverse any word or phrase that you enter into the text field below. To get started, enter any word or phrase in the text box below, and then click the button.</p>
+
+		<form class="spaced">
+			<input id="origin" type="text" name="reverse" placeholder="Please enter a word">
+		</form>
+
+		<div class="button-holder spaced">
+			<button id="button1">Reverse the word</button>
+			<button id="button2">Reset the Page</button>
+		</div>
+
+		<div id="output" class="spaced">
+
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	var target = document.getElementById("output");
+	var button1 = document.getElementsByTagName("button")[0];
+	var button2 = document.getElementsByTagName("button")[1];
+	var origin = document.getElementById("origin");
+	var form = document.getElementsByTagName("form")[0];
+
+	function reverse(word){
+		return word.split("").reverse().join("");
+	}
+
+	function appendToPage(destination){
+		origin = origin.value.toString();
+		var outputWord = origin.split("").reverse().join("");
+		if(!origin){
+			alert("Please enter a word o phrase. Any set of charcters is fine : )");
+			reset();
+		}else{
+			destination.innerHTML = `<h1> ${outputWord} </h1>`;
+			destination.classList.toggle("fadein");
+			button1.style.display="none";
+			form.style.display="none";
+		}
+	}
+
+	function setListeners(){
+		button1.addEventListener("click", function(){
+			appendToPage(target);
+		});
+		origin.addEventListener("keypress", function(event){
+			if(event.keyCode === 13){
+				event.preventDefault();
+				appendToPage(target);
+			}
+		});
+		button2.addEventListener("click", function(){
+			reset();
+		});
+	}
+
+	function reset() {
+		window.location.reload();
+	}
+
+	setListeners();
+</script>
+
+</body>
+</html>
