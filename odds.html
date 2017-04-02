@@ -94,22 +94,26 @@
 		}
 	}
 
-	button1.addEventListener("click", () => {
-		appendNumsToPage(target);
-		button1.style.display="none";
-		target.classList.toggle("fadein");
-		button2.focus();
-	});
+	let setListeners = () => {
+		button1.addEventListener("click", () => {
+			appendNumsToPage(target);
+			button1.style.display="none";
+			target.classList.toggle("fadein");
+			button2.focus();
+		});
 
-	button2.addEventListener("click", () => {
-		window.location.reload();
-	});
+		button2.addEventListener("click", () => {
+			window.location.reload();
+		});
+	}
+
+	setListeners();
 
 //******************************************************************************************************
 //****************  The ES5 Version of this code is Below  *********************************************
 //******************************************************************************************************
 
-	//var target = document.getElementById("output");
+	// var target = document.getElementById("output");
 	// var slider = document.getElementById("hidden");
 	// var button1 = document.getElementById("button1");
 	// var button2 = document.getElementById("button2");
@@ -122,17 +126,19 @@
 	// 		}	
 	// 	}
 	// }
+	// function setListeners(){
+	// 	button1.addEventListener("click", function(){
+	// 		appendNumsToPage(target);
+	// 		button1.style.display="none";
+	// 		target.classList.toggle("fadein");
+	// 		button2.focus();
+	// 	});
+	// 	button2.addEventListener("click", function(){
+	// 		window.location.reload();
+	// 	});
+	// }
 
-	// button1.addEventListener("click", function(){
-	// 	appendNumsToPage(target);
-	// 	button1.style.display="none";
-	// 	target.classList.toggle("fadein");
-	// 	button2.focus();
-	// });
-
-	// button2.addEventListener("click", function(){
-	// 	window.location.reload();
-	// });
+	// setListeners();
 
 </script>
 
